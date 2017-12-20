@@ -13,5 +13,6 @@ RUN apk upgrade --update && \
   ln -s /usr/local/apache-tomcat-${TOMCAT_VERSION} /usr/local/apache-tomcat && \
   rm /var/cache/apk/* /tmp/apache-tomcat.tar.gz
 
+WORKDIR ${CATALINA_HOME}
 EXPOSE 8080
-CMD ["${CATALINA_HOME}/bin/catalina.sh", "run"]
+CMD ["./bin/catalina.sh", "run"]
